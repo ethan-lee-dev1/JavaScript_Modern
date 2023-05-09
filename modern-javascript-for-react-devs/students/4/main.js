@@ -78,8 +78,27 @@ const ex4 = () => {
   console.log(palindrome("month"));
   console.log(palindrome("racecar"));
 };
-ex4();
 
-const main = async () => {};
+//ex 5
 
-main();
+const displayThis = (string) => {
+  let result = 0;
+  const arrayOfStr = string.split(" ");
+  for (let i = 0; i < arrayOfStr.length; i++) {
+    if (arrayOfStr[i] === "this") {
+      result += 1;
+    }
+  }
+  return `this appears: ${result} times.`;
+};
+
+//ex 5 test cases
+const ex5 = () => {
+  let str = "today this is a this is a this is a test.";
+  let str1 = "this is not this";
+  let str2 = "I don't have any this in my string";
+  console.log(displayThis(str));
+  console.log(displayThis(str1));
+  console.log(displayThis(str2));
+};
+ex5();
