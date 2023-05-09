@@ -101,4 +101,26 @@ const ex5 = () => {
   console.log(displayThis(str1));
   console.log(displayThis(str2));
 };
-ex5();
+
+//ex 6
+const longestString = (arr) => {
+  let result = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > result.length) {
+      result = arr[i];
+    }
+  }
+  return result;
+};
+
+//ex 6 test cases
+const ex6 = () => {
+  const array = ["this", "is", "a", "test", "happy"];
+  const array1 = ["sdadsad", "d", "short"];
+  const array2 = ["sdadsad", "d", "short", "longestString"];
+  console.log(longestString(array));
+  console.log(longestString(array1));
+  console.log(longestString(array2));
+};
+
+ex6();
