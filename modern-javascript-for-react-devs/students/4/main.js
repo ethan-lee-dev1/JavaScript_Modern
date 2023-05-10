@@ -26,7 +26,7 @@ const ex1 = () => {
 
 // ex2
 const minNumber = (arr) => {
-  let min = arr[0];
+  let min = arr[0]; //12
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] < min) {
       min = arr[i];
@@ -37,7 +37,8 @@ const minNumber = (arr) => {
 
 // ex2 test cases
 const ex2 = () => {
-  console.log(minNumber([3, 5, 1, 2]));
+  let array1 = [3, 5, 1, 2];
+  console.log(minNumber(array1));
   console.log(minNumber([10, 5, 3, 0]));
   console.log(minNumber([3, -29, 1, -100]));
 };
@@ -123,4 +124,65 @@ const ex6 = () => {
   console.log(longestString(array2));
 };
 
-ex6();
+//ex 7
+const sort = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      //console.log("I :" + i, "J :" + j);
+      if (arr[i] > arr[j]) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+};
+
+//ex 7 test cases
+const ex7 = () => {
+  let n = [1, 3, 6, 3, 6, 10];
+  let array = [4, 3, 2, 1, 23, 111];
+  let array1 = [90, 102, 30, 12, 2];
+
+  console.log(sort(n));
+  console.log(sort(array));
+  console.log(sort(array1));
+};
+
+//ex 8
+const countWords = (str) => str.split(" ").length;
+
+//ex 8 test cases
+const ex8 = () => {
+  let words = "Count the words in this string";
+  let words1 = "Hello";
+  let words2 = "Hi my name is Ethan";
+  console.log(countWords(words));
+  console.log(countWords(words1));
+  console.log(countWords(words2));
+};
+
+//ex 9
+const countS = (str) => {
+  str = str.toLowerCase();
+  let result = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "s") {
+      result += 1;
+    }
+  }
+  return result;
+};
+
+//ex 9 test cases
+const ex9 = () => {
+  let a = "this counts the number of words that end in s";
+  let b = "I don't have any";
+  let c = "I have many ssssssSs with uppercase";
+  console.log(countS(a));
+  console.log(countS(b));
+  console.log(countS(c));
+};
+
+
