@@ -185,4 +185,19 @@ const ex9 = () => {
   console.log(countS(c));
 };
 
+//ex 10
+const countLetters = (arr) => {
+  arr = arr.join("");
+  return arr.length;
+};
 
+const ex10 = () => {
+  let array = ["this", "is", "a", "test"];
+  let array1 = ["hi", "hello", "lol"];
+  let array2 = ["oneBigWordInThisArray"];
+  console.log(countLetters(array));
+  console.log(countLetters(array1));
+  console.log(countLetters(array2));
+};
+
+ex10();
