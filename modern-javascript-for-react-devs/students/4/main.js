@@ -200,4 +200,26 @@ const ex10 = () => {
   console.log(countLetters(array2));
 };
 
-ex10();
+//ex 11
+const numberOnly = (arr) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+};
+
+//ex 12 test cases
+const ex11 = () => {
+  let arr = ["dog", 3, 7, "cat", 13, "car"];
+  let arr1 = [12, 123, 531, { a: 1, b: 2 }];
+  let arr2 = ["no numbers in here"];
+  console.log(numberOnly(arr));
+  console.log(numberOnly(arr1));
+  console.log(numberOnly(arr2));
+};
+
+//ex 12
+
