@@ -27,7 +27,7 @@ const ex1 = () => {
 // ex2
 const minNumber = (arr) => {
   let min = arr[0]; //12
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 1; i < arr.length; i++) {
     if (arr[i] < min) {
       min = arr[i];
     }
@@ -66,7 +66,7 @@ const ex3 = () => {
 
 // ex4
 const palindrome = (str) => {
-  for (let i = 0; i < Math.floor(str.length); i++) {
+  for (let i = 0; i < str.length; i++) {
     if (str[i] !== str[str.length - 1 - i]) {
       return false;
     }
@@ -187,8 +187,20 @@ const ex9 = () => {
 
 //ex 10
 const countLetters = (arr) => {
-  arr = arr.join("");
-  return arr.length;
+  //   arr = arr.join("");
+  //   return arr.length;
+
+  //using reduce
+  return arr.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.length;
+  }, 0);
+
+  //using map
+  let result = 0;
+  arr.map((el) => {
+    return (result += el.length);
+  });
+  return result;
 };
 
 const ex10 = () => {
@@ -211,7 +223,7 @@ const numberOnly = (arr) => {
   return result;
 };
 
-//ex 12 test cases
+//ex 11 test cases
 const ex11 = () => {
   let arr = ["dog", 3, 7, "cat", 13, "car"];
   let arr1 = [12, 123, 531, { a: 1, b: 2 }];
@@ -222,4 +234,72 @@ const ex11 = () => {
 };
 
 //ex 12
+class Calculator {
+  constructor() {
+    this.history = "";
+    this.add = (x, y) => (this.history += `Add: ${x} + ${y} = ${x + y} \n`);
+    this.sub = (x, y) => (this.history += `Sub: ${x} - ${y} = ${x - y} \n`);
+    this.div = (x, y) => (this.history += `Div: ${x} / ${y} = ${x / y} \n`);
+    this.mul = (x, y) => (this.history += `Mul: ${x} * ${y} = ${x * y} \n`);
+    this.getHistory = () => {
+      return this.history;
+    };
+  }
+}
 
+//ex 12 test cases
+const ex12 = () => {
+  const c = new Calculator();
+  c.add(1, 2);
+  c.sub(4, 1);
+  c.div(10, 2);
+  c.mul(2, 2);
+  c.sub(5, 10);
+  console.log(c.getHistory());
+};
+
+//ex 13
+const dictionary = (array) => {
+  let result = 0;
+  for (let i = 0; i < array.length; i++) {
+    let eachObject = array[i];
+    result += eachObject.age;
+  }
+  return `The total age is: ${result}`;
+};
+
+//ex 13 test cases
+const ex13 = () => {
+  let dict = [
+    { firstName: "joe", lastName: "smith", age: 10 },
+    { firstName: "paul", lastName: "simmon", age: 20 },
+    { firstName: "fred", lastName: "jones", age: 30 },
+  ];
+  console.log(dictionary(dict));
+};
+
+//ex 14
+const displayCredit = (arr) => {
+  return arr.filter((el) => {
+    el.credit === 200;
+  });
+};
+
+//ex 14 test cases
+const ex14 = () => {
+  let customers = [
+    {
+      name: "ABC Inc",
+      credit: 100,
+    },
+    {
+      name: "ACME Corp",
+      credit: 200,
+    },
+    {
+      name: "IoT AG",
+      credit: 300,
+    },
+  ];
+  console.log(displayCredit(customers));
+};
